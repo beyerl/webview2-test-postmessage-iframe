@@ -1,1 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Receiver</title>
+</head>
+<body>
+
+<h1>Message Receiver</h1>
+
+<!-- Add an iframe to load the specified URL -->
+<iframe id="myIframe" src="https://beyerl.github.io/webview2-test-postmessage/" width="600" height="400"></iframe>
+
+<script>
+    // Listen for messages from the iframe
+    window.addEventListener('message', function(event) {
+        // Check if the message is from the expected origin
+        if (event.origin === 'https://beyerl.github.io') {
+            // Display the received message
+            alert('Received Message: ' + event.data);
+        }
+    });
+</script>
+
+</body>
+</html>
 
